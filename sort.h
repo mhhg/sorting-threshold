@@ -412,12 +412,13 @@ void MERGE_SORT(SORT_TYPE *dst, const size_t size) {
     uint64_t i = 0;
     uint64_t j = middle;
 /* don't bother sorting an array of size 0 */
-    if (size == 0) {
+    if (size == 1) {
         return;
     }
 
     if (size < merge_sort_threshold) {
         BINARY_INSERTION_SORT(dst, size);
+//        printf("\nt=%d size=%d", merge_sort_threshold, size);
         return;
     }
     MERGE_SORT(dst, middle);
